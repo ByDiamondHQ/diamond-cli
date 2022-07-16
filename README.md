@@ -1,13 +1,13 @@
-# friday-cli
+# diamond-cli
 
-A cli tool for generating better Express API boilerplates
+A cli tool for working with Diamond Express
 
 ## usage
 ```
-friday help -- Shows help command
-friday uuid -- Generates v4 UUID and copies to clipboard
-friday make app -- Generates boilerplate Express api
-friday env -- Describes the current app's environment variables
+dmd help -- Shows help command
+dmd uuid -- Generates v4 UUID and copies to clipboard
+dmd make app -- Generates boilerplate Express api
+dmd env -- Describes the current app's environment variables
 ```
 
 ## Todo
