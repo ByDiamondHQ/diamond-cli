@@ -1,30 +1,81 @@
 {
   "name": "diamond-cli",
-  "version": "0.0.2",
-  "description": "",
-  "main": "./src/index.js",
+  "version": "0.1.0",
+  "description": "A tool for working with Diamond Express",
+  "author": "Max Diamond @dmdboi",
   "bin": {
-    "dmd": "./src/index.js",
-    "diamond": "./src/index.js"
+    "upgrades": "./bin/run"
+  },
+  "homepage": "https://github.com/bydiamondhq/diamond-cli",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": "bydiamondhq/diamond-cli",
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@oclif/color": "^1.0.1",
+    "@oclif/core": "^1.12.1",
+    "@oclif/plugin-help": "^5",
+    "@oclif/plugin-plugins": "^2.0.1",
+    "chalk": "^5.0.1",
+    "clipboardy": "^3.0.0",
+    "fs-extra": "^10.1.0",
+    "log-symbols": "^5.1.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@oclif/test": "^2",
+    "@types/chai": "^4",
+    "@types/fs-extra": "^9.0.13",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.9.4",
+    "@types/supports-color": "^8.1.1",
+    "@types/uuid": "^8.3.4",
+    "chai": "^4",
+    "eslint": "^7.32.0",
+    "eslint-config-oclif": "^4",
+    "eslint-config-oclif-typescript": "^1.0.2",
+    "globby": "^11",
+    "mocha": "^9",
+    "oclif": "^3",
+    "shx": "^0.3.3",
+    "ts-node": "^10.2.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  },
+  "oclif": {
+    "bin": "upgrades",
+    "dirname": "upgrades",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "config": {
+        "description": "Manages the CLI's configuration"
+      }
+    }
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint . --ext .ts --config .eslintrc",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "prepack": "yarn build && oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=12.0.0"
   },
-  "files": [
-    "/src"
+  "bugs": "https://github.com/bydiamondhq/diamond-cli/issues",
+  "keywords": [
+    "oclif"
   ],
-  "keywords": [],
-  "author": "Max Diamond @dmdboi",
-  "license": "MIT",
-  "scripts": {
-    "start": "node ./build/index.js"
-  },
-  "dependencies": {
-    "chalk": "^4.1.2",
-    "clipboardy": "^2.0.0",
-    "fs-extra": "^10.1.0",
-    "log-symbols": "^4.1.0",
-    "uuid": "^8.3.2",
-    "yargs": "^17.3.1"
-  }
+  "types": "dist/index.d.ts"
 }
