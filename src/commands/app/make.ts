@@ -24,10 +24,6 @@ export default class AppMake extends Command {
 
     if (!name) return this.log(color.redBright('Application name must be provided.'))
 
-    const appDir = join(process.cwd(), '.env')
-
-    mkdirSync(appDir)
-
     await execute(`git clone ${diamondrepo} ${name}`)
 
     this.log(``)
