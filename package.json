@@ -4,7 +4,7 @@
   "description": "A tool for working with Diamond Express",
   "author": "Max Diamond @dmdboi",
   "bin": {
-    "upgrades": "./bin/run"
+    "dmd": "./bin/run"
   },
   "homepage": "https://github.com/bydiamondhq/diamond-cli",
   "license": "MIT",

@@ -21,8 +21,6 @@ export default class Env extends Command {
 
   public async run(): Promise<void> {
 
-    const pkg = readJSONSync(join(process.cwd(), 'package.json'))
-
     const envDir = join(process.cwd(), '.env')
 
     let env: string = "undefined"
@@ -50,7 +48,7 @@ export default class Env extends Command {
       }
     ]
 
-    this.log(color.blueBright(``))
+    this.log(``)
     this.log(color.blueBright('===== Current Environment ====='))
     CliUx.ux.table(data, {
       name: {
@@ -64,7 +62,7 @@ export default class Env extends Command {
       "no-header": true
     })
     this.log(color.blueBright('==============================='))
-    this.log(color.blueBright(``))
+    this.log(``)
   }
 
   async catch(error: Error) {

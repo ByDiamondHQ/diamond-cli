@@ -14,9 +14,11 @@ export default class Uuid extends Command {
 
     const uuid = uuidv4()
 
+    this.log(``)
     this.log(color.blueBright('===== UUID Generated ====='))
     this.log(uuid)
     this.log(color.blueBright('==============================='))
+    this.log(``)
   }
 
   async catch(error: Error) {

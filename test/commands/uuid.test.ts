@@ -4,7 +4,7 @@ describe('uuid', () => {
   test
     .stdout()
     .command(['uuid'])
-    .it('runs uuid', ctx => {
-      expect(ctx.stdout).to.contain('UUID generated:')
+    .it('runs dmd uuid', ctx => {
+      expect(ctx.stdout).to.contain('UUID Generated')
     })
 })

@@ -28,7 +28,7 @@ export default class ViewConfig extends Command {
 
     Object.entries(userConfig).map(i => userData.push({ name: i[0], value: i[1] }))
 
-    this.log(color.blueBright(``))
+    this.log(``)
     this.log(color.blueBright(`========= ${profile} config =========`))
     CliUx.ux.table(userData, {
       name: {
@@ -42,7 +42,7 @@ export default class ViewConfig extends Command {
       "no-header": true
     })
     this.log(color.blueBright('=============================='))
-    this.log(color.blueBright(``))
+    this.log(``)
   }
 
   async catch(error: Error) {
