@@ -21,7 +21,7 @@
     "@oclif/core": "^1.12.1",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.0.1",
-    "chalk": "^5.0.1",
+    "chalk": "^5.1.2",
     "clipboardy": "^3.0.0",
     "fs-extra": "^10.1.0",
     "log-symbols": "^5.1.0",
